@@ -5,7 +5,7 @@ package main
 import (
     "io"
     "net/http"
-    // "os"
+    "os"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
@@ -13,8 +13,8 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    // port := os.Getenv("PORT")
+    port := os.Getenv("PORT")
     http.HandleFunc("/", hello)
-    // http.ListenAndServe(":"+port, nil)
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":"+port, nil)
+    // http.ListenAndServe(":8080", nil)
 }
